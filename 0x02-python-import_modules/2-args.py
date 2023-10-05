@@ -10,4 +10,4 @@ if __name__ == "__main__":
         if i == 0:
             continue
         else:
-            print(f"{i}: {arg}")
+            print("{}:".format(i), "{}".format(arg))
