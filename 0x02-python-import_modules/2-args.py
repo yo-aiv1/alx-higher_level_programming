@@ -4,6 +4,8 @@ if __name__ == "__main__":
     lenght = len(sys.argv)
     if 1 >= lenght:
         print('0 arguments.')
+    elif 2 == lenght:
+        print('1 argument:')
     else:
         print('{} arguments:'.format(lenght - 1))
     for i, arg in enumerate(sys.argv):
