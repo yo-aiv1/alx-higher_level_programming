@@ -9,6 +9,8 @@ def roman_to_int(roman_string):
     for i, char in enumerate(roman_string):
         if char in dir.keys():
             nums.append(dir[char])
+        elif char not in dir.keys():
+            return 0
 
     for i in range(len(nums)):
         if i == len(nums) - 1:
