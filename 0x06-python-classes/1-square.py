@@ -5,9 +5,10 @@ Square class.
 nothing
 """
 
+
 class Square:
     """A class representing a square with a given size."""
-    
+
     def __init__(self, size):
         """Initialize a new square with the given size.
 
