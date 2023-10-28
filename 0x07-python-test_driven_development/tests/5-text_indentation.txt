@@ -1,0 +1,31 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+>>> text_indentation(True,False)
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+
+>>> text_indentation(True)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+
+>>> text_indentation(int("110124457"))
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+
+>>> text_indentation(str("11012. 4457"))
+11012.
+<BLANKLINE>
+4457
+
+
+>>> text_indentation(f"hello, my name is yahya. and im {int(22)} years old")
+hello, my name is yahya.
+<BLANKLINE>
+and im 22 years old
