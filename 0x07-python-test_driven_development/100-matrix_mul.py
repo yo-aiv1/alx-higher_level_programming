@@ -3,7 +3,7 @@
 
 
 def matrix_mul(m_a, m_b):
-    """ Multiplies 2 matrices.
+    """Multiplies 2 matrices.
 
     Args:
         m_a: matrix a
@@ -12,7 +12,6 @@ def matrix_mul(m_a, m_b):
     Returns:
         result of the multiplication
     """
-
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
 
@@ -32,11 +31,6 @@ def matrix_mul(m_a, m_b):
 
     if len(m_b) == 0 or (len(m_b) == 1 and len(m_b[0]) == 0):
         raise ValueError("m_b can't be empty")
-
-    for lists in m_a:
-        for elems in lists:
-            if not type(elems) in (int, float):
-                raise TypeError("m_a should contain only integers or floats")
 
     for lists in m_b:
         for elems in lists:
