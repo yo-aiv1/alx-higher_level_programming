@@ -1,0 +1,13 @@
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], None])
+Traceback (most recent call last):
+    ...
+TypeError: must give a list of integets
+
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], ["max", low]])
+Traceback (most recent call last):
+    ...
+TypeError: must give a list of integets
