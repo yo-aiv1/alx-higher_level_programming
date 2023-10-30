@@ -65,6 +65,9 @@ class Rectangle:
         Returns:
             str: rectangle
         """
+        if self.width == 0 or self.height == 0:
+            return (0)
+
         count = 0
         _rectangle = ""
         for i in range(Rectangle.area(self)):
