@@ -2,9 +2,6 @@
 """Summary."""
 
 
-import sys
-
-
 def check_if_safe(m_queen, nqueen):
     """Determine if the queens can or can't kill each other.
 
@@ -80,18 +77,20 @@ def nqueensolution(size):
     Queen(m_queen, 0)
 
 
-if len(sys.argv) == 1 or len(sys.argv) > 2:
-    print("Usage: nqueens N")
-    sys.exit(1)
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) == 1 or len(sys.argv) > 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
 
-try:
-    size = int(sys.argv[1])
-except Exception:
-    print("N must be a number")
-    sys.exit(1)
+    try:
+        size = int(sys.argv[1])
+    except Exception:
+        print("N must be a number")
+        sys.exit(1)
 
-if size < 4:
-    print("N must be at least 4")
-    sys.exit(1)
+    if size < 4:
+        print("N must be at least 4")
+        sys.exit(1)
 
-nqueensolution(size)
+    nqueensolution(size)
