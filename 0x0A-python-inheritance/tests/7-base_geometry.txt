@@ -6,16 +6,16 @@
 >>> bg.integer_validator("SmartSize", 16)
 
 
->>> bg.integer_validator("SmartSize", "idk")
+>>> bg.integer_validator("Carl", "idk")
 Traceback (most recent call last):
     ...
-TypeError: SmartSize must be an integer
+TypeError: Carl must be an integer
 
 
->>> bg.integer_validator("SmartSize", "1212455")
+>>> bg.integer_validator("Edith", "1212455")
 Traceback (most recent call last):
     ...
-TypeError: SmartSize must be an integer
+TypeError: Edith must be an integer
 
 
 >>> bg.integer_validator("SmartSize", 121.54)
@@ -24,13 +24,37 @@ Traceback (most recent call last):
 TypeError: SmartSize must be an integer
 
 
->>> bg.integer_validator("SmartSize", -999999999999999999999999999999999999999999999999)
+>>> bg.integer_validator("House", -999999999999999999999999999999999999999999999999)
 Traceback (most recent call last):
     ...
-ValueError: SmartSize must be greater than 0
+ValueError: House must be greater than 0
 
 
->>> bg.integer_validator("SmartSize", -1)
+>>> bg.integer_validator("Car", -1)
 Traceback (most recent call last):
     ...
-ValueError: SmartSize must be greater than 0
+ValueError: Car must be greater than 0
+
+
+>>> bg.integer_validator("Plane", [10, 2])
+Traceback (most recent call last):
+    ...
+TypeError: Plane must be an integer
+
+
+>>> bg.integer_validator("Truck", 1)
+
+
+>>> bg.integer_validator("bathroom", (-444 + 224))
+Traceback (most recent call last):
+    ...
+ValueError: bathroom must be greater than 0
+
+
+bg.integer_validator("Mark", (1 + 1))
+
+
+>>> bg.integer_validator("Wire", (10,))
+Traceback (most recent call last):
+    ...
+TypeError: Wire must be an integer
