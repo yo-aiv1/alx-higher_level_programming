@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Summary."""
+
+
 def read_file(filename=""):
     """Read files function.
 
