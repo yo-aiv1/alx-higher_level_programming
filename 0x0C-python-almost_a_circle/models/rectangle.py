@@ -98,8 +98,11 @@ class Rectangle(Base):
         width_and_height = "{}/{}".format(self.__width, self.__height)
         return name + rectangle_id + x_and_y + width_and_height
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assign an argument to each attribute."""
         attr = ["id", "width", "height", 'x', 'y']
         for i in range(len(args)):
             setattr(self, attr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
