@@ -47,3 +47,17 @@ class Base:
 
         with open(file_name, 'w') as f:
             f.write(lists)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Get json representation as string.
+
+        Args:
+            json_string (dict)
+
+        Returns:
+            (str): representation of json_string.
+        """
+        if not json_string:
+            return []
+        return json.loads(json_string)
