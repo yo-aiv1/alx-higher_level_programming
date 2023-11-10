@@ -20,6 +20,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Get json representation of list_dictionaries.
 
@@ -32,3 +33,17 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Save data about rectangle to a json file."""
+        file_name = "{}.json".format(cls.__name__)
+        list_of_dic = []
+
+        for i in range(len(list_objs)):
+            list_of_dic.append(list_objs[i].to_dictionary())
+
+        lists = cls.to_json_string(list_of_dic)
+
+        with open(file_name, 'w') as f:
+            f.write(lists)
