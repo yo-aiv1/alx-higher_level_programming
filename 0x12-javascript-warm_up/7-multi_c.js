@@ -9,4 +9,3 @@ if (Number.isNaN(num)) {
     console.log('C is fun');
   }
 }
-
