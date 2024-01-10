@@ -3,7 +3,7 @@
 const dict = require('./101-data').dict;
 
 const NewDict = {};
-for (let key in dict) {
+for (const key in dict) {
   if (dict.hasOwnProperty(key)) {
     const value = dict[key];
     if (NewDict.hasOwnProperty(value)) {
