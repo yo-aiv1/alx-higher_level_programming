@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Fetch all data in states table."""
+"""Fetch the first row at the table states."""
 
 if __name__ == "__main__":
     from model_state import Base, State
@@ -13,7 +13,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).all()
+    state = session.query(State).first()
 
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    print("{}: {}".format(state.id, state.name))
