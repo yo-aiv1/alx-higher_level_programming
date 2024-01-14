@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Fetch all states and cities."""
+"""Fetch all data in citites table."""
 
 if __name__ == "__main__":
     from relationship_state import Base, State
@@ -14,10 +14,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    fetch = session.query(State).outerjoin(City).order_by(State.id, City.id)
-    data = fetch.all()
+    data = session.query(State).join(City).order_by(City.id).all()
 
     for state in data:
-        print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-           print("    {}: {}".format(city.id, city.name))
+            print("{}: {} -> {}".format(city.id, city.name, state.name))
