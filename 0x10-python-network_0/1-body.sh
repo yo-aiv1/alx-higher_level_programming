@@ -1,3 +1,3 @@
 #!/bin/bash
 # get the body response
-curl -L "$1"
+curl -Ls "$1"
