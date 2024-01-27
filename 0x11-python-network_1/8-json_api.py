@@ -10,10 +10,12 @@ import sys
 if __name__ == "__main__":
     data = {'q': ""}
     apiurl = "http://0.0.0.0:5000/search_user"
+    try:
+        if len(sys.argv[1]) != 0:
+            data['q'] = sys.argv[1]
+    except Exception:
+        pass
 
-    if len(sys.argv[1]) != 0:
-        data['q'] = sys.argv[1]
- 
     request = requests.post(apiurl, data)
 
     try:
