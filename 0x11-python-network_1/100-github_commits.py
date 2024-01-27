@@ -13,7 +13,10 @@ if __name__ == "__main__":
     apiurl = 'https://api.github.com/repos/{}/{}/commits'.format(owner, repo)
     request = get(apiurl)
     jsonobject = request.json()
-    for i in range(0, 10):
-        sha = jsonobject[i].get('sha')
-        name = jsonobject[i].get('commit').get('author').get('name')
-        print("{}: {}".format(sha, name))
+    try:
+        for i in range(0, 10):
+            sha = jsonobject[i].get('sha')
+            name = jsonobject[i].get('commit').get('author').get('name')
+            print("{}: {}".format(sha, name))
+    except Exception:
+        pass
