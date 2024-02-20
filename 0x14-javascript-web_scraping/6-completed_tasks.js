@@ -8,12 +8,13 @@ request(process.argv[2], function (err, response, body) {
 
     for (let i = 0; i < jsonData.length; i++) {
       const key = jsonData[i].userId;
-      if (!(key in UsersCompletedTasks)) {
-        UsersCompletedTasks[key] = 0;
-      }
 
       if (jsonData[i].completed === true) {
-        UsersCompletedTasks[key]++;
+        if (!(key in UsersCompletedTasks)) {
+          UsersCompletedTasks[key] = 1;
+        } else {
+          UsersCompletedTasks[key]++;
+        }
       }
     }
     console.log(UsersCompletedTasks);
